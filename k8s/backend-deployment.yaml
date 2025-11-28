@@ -19,7 +19,7 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://mysql-service:3306/bloodbank?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+          value: jdbc:mysql://mysql-service:3306/bloodbank?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
         - name: SPRING_DATASOURCE_USERNAME
           value: root
         - name: SPRING_DATASOURCE_PASSWORD
@@ -28,7 +28,7 @@ spec:
               name: mysql-secret
               key: root-password
         - name: CORS_ALLOWED_ORIGINS
-          value: http://localhost:3000
+          value: http://frontend-service
         resources:
           requests:
             memory: "512Mi"
